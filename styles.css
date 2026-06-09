@@ -6,7 +6,7 @@
   --bg:          #FFFFFF;  /* main background */
   --bg-soft:     #F4F7FA;  /* alternating section background */
   --accent:      #1F5C99;  /* cool blue: links, primary buttons */
-  --accent-hover:#184B7E;  /* button and link hover */
+  --accent-hover:#1A4F84;  /* button and link hover */
   --ice:         #6FA8BE;  /* icy highlight, used only on the falls accent and dividers */
   --border:      #E2E9F0;  /* hairline borders, card edges */
 
@@ -28,14 +28,19 @@ html {
   scroll-behavior: smooth;
 }
 
+::selection {
+  background: var(--ice);
+  color: var(--bg);
+}
+
 body {
   margin: 0;
-  padding-top: 68px;
+  padding-top: 64px;
   background: var(--bg);
   color: var(--ink);
   font-family: var(--font-body);
   font-size: 16px;
-  line-height: 1.7;
+  line-height: 1.65;
 }
 
 body.menu-open {
@@ -59,8 +64,8 @@ a:hover {
 
 a:focus-visible,
 button:focus-visible {
-  outline: 3px solid var(--ice);
-  outline-offset: 3px;
+  outline: 2px solid var(--ice);
+  outline-offset: 2px;
 }
 
 p {
@@ -71,6 +76,12 @@ p + p {
   margin-top: 18px;
 }
 
+.hero p,
+.content-narrow p,
+.product-copy p {
+  max-width: 42rem;
+}
+
 h1,
 h2,
 h3 {
@@ -78,20 +89,25 @@ h3 {
   color: var(--navy);
   font-family: var(--font-display);
   font-weight: 600;
-  line-height: 1.12;
+  line-height: 1.15;
   letter-spacing: -0.02em;
 }
 
 h1 {
-  font-size: 34px;
+  color: var(--navy);
+  font-size: 38px;
+  line-height: 1.05;
+  letter-spacing: -0.025em;
 }
 
 h2 {
   font-size: 26px;
+  line-height: 1.15;
 }
 
 h3 {
   font-size: 18px;
+  letter-spacing: -0.01em;
 }
 
 .container {
@@ -107,13 +123,21 @@ h3 {
   right: 0;
   z-index: 1000;
   width: 100%;
-  border-bottom: 1px solid var(--border);
-  background: var(--bg);
+  height: 64px;
+  border-bottom: 1px solid transparent;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition: border-color 150ms ease;
+}
+
+.site-header.is-scrolled {
+  border-bottom-color: #E5EAF0;
 }
 
 .header-inner {
   display: flex;
-  min-height: 68px;
+  height: 64px;
   align-items: center;
   justify-content: space-between;
   gap: 24px;
@@ -142,30 +166,31 @@ h3 {
 }
 
 .nav-link {
-  color: var(--ink);
+  color: var(--navy);
   font-size: 14px;
   font-weight: 500;
   text-decoration: none;
+  transition: color 150ms ease;
 }
 
 .nav-link:hover {
-  color: var(--accent-hover);
+  color: var(--accent);
 }
 
 .button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 48px;
   border: 1px solid var(--accent);
-  border-radius: var(--radius);
+  border-radius: 8px;
   background: var(--accent);
   color: var(--bg);
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 600;
   line-height: 1;
-  padding: 14px 24px;
+  padding: 12px 22px;
   text-decoration: none;
+  transition: background-color 150ms ease, border-color 150ms ease, color 150ms ease;
 }
 
 .button:hover,
@@ -177,19 +202,33 @@ h3 {
 
 .button .external-arrow {
   margin-left: 0.4em;
+  transition: transform 150ms ease;
+}
+
+.button:hover .external-arrow {
+  transform: translateX(2px);
 }
 
 .text-link {
   display: inline-flex;
   align-items: center;
-  color: var(--accent);
+  justify-content: center;
+  border: 1px solid #C9D6E2;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--navy);
+  font-size: 14px;
   font-weight: 600;
+  line-height: 1;
+  padding: 12px 22px;
   text-decoration: none;
+  transition: border-color 150ms ease, color 150ms ease;
 }
 
 .text-link:hover {
-  color: var(--accent-hover);
-  text-decoration: underline;
+  border-color: var(--accent);
+  color: var(--accent);
+  text-decoration: none;
 }
 
 .menu-toggle {
@@ -259,6 +298,7 @@ h3 {
 .hero {
   display: flex;
   align-items: center;
+  padding: 72px 0 64px;
 }
 
 .hero-grid {
@@ -283,26 +323,26 @@ h3 {
 .section-kicker {
   display: block;
   margin-bottom: 12px;
-  color: var(--muted);
-  font-size: 13px;
-  font-weight: 500;
-  letter-spacing: 0.06em;
+  color: #6B7A8D;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
   line-height: 1.2;
   text-transform: uppercase;
 }
 
 .hero-subheadline {
-  max-width: 760px;
+  max-width: 42rem;
   margin-top: 20px;
   color: var(--navy);
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 500;
   line-height: 1.45;
 }
 
 .hero-supporting {
-  max-width: 720px;
-  margin-top: 18px;
+  max-width: 42rem;
+  margin-top: 16px;
   color: var(--ink);
 }
 
@@ -311,7 +351,7 @@ h3 {
   flex-wrap: wrap;
   gap: 18px;
   align-items: center;
-  margin-top: 34px;
+  margin-top: 32px;
 }
 
 .section-heading {
@@ -337,7 +377,15 @@ h3 {
 }
 
 .content-narrow {
+  max-width: 42rem;
+}
+
+.twofer-panel {
   max-width: 780px;
+  border: 1px solid #E5EAF0;
+  border-radius: 12px;
+  background: var(--bg-soft);
+  padding: 28px;
 }
 
 .product-name {
@@ -346,7 +394,7 @@ h3 {
 }
 
 .product-copy {
-  max-width: 780px;
+  max-width: 42rem;
 }
 
 .product-actions {
@@ -363,7 +411,7 @@ h3 {
 .cards {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 18px;
+  gap: 20px;
   align-items: stretch;
 }
 
@@ -372,11 +420,11 @@ h3 {
   height: 100%;
   flex-direction: column;
   min-height: 100%;
-  border: 1px solid var(--border);
-  border-top: 1px solid var(--border);
-  border-radius: var(--radius);
+  border: 1px solid #E5EAF0;
+  border-radius: 10px;
   background: var(--bg);
   padding: 28px;
+  transition: border-color 150ms ease;
 }
 
 .card:hover {
@@ -404,9 +452,20 @@ h3 {
 }
 
 .site-footer {
+  position: relative;
   background: var(--navy);
   color: var(--bg-soft);
   padding: 36px 0;
+}
+
+.site-footer::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--ice) 0%, var(--navy) 100%);
+  content: "";
 }
 
 .footer-inner {
@@ -428,10 +487,12 @@ h3 {
 .footer-links a {
   color: var(--bg);
   font-weight: 500;
+  transition: color 150ms ease;
 }
 
 .footer-links a:hover {
-  color: var(--bg-soft);
+  color: var(--ice);
+  text-decoration: underline;
 }
 
 .legal-main {
@@ -491,19 +552,20 @@ h3 {
 
 @media (min-width: 760px) {
   body {
-    font-size: 17px;
+    font-size: 16px;
   }
 
   h1 {
     font-size: 56px;
+    letter-spacing: -0.025em;
   }
 
   h2 {
-    font-size: 34px;
+    font-size: 32px;
   }
 
   h3 {
-    font-size: 20px;
+    font-size: 18px;
   }
 
   .section,
@@ -511,18 +573,31 @@ h3 {
     padding: 80px 0;
   }
 
+  .hero {
+    padding: 96px 0 80px;
+  }
+
+  .hero-subheadline {
+    font-size: 20px;
+  }
+
+  .twofer-panel {
+    padding: 48px;
+  }
+
   .falls-line {
     height: 88px;
   }
 }
 
-@media (max-width: 720px) {
-  .header-inner {
-    min-height: 64px;
-  }
-
+@media (max-width: 640px) {
   body {
     padding-top: 64px;
+  }
+
+  .section,
+  .hero {
+    padding: 56px 0;
   }
 
   .menu-toggle {
@@ -570,14 +645,17 @@ h3 {
   .hero-actions {
     align-items: flex-start;
     flex-direction: column;
+    width: 100%;
+  }
+
+  .hero-actions .button,
+  .hero-actions .text-link {
+    width: 100%;
   }
 
   .cards {
     grid-template-columns: 1fr;
-  }
-
-  .product-name {
-    font-size: 30px;
+    gap: 16px;
   }
 }
 

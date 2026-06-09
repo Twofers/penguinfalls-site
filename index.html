@@ -51,7 +51,8 @@
         <div class="hero-grid">
           <div class="falls-line" aria-hidden="true"></div>
           <div class="hero-content">
-            <h1 id="hero-title">Penguin Falls LLC</h1>
+            <span class="eyebrow">Penguin Falls LLC &middot; Irving, Texas</span>
+            <h1 id="hero-title">Penguin Falls</h1>
             <p class="hero-subheadline">A veteran-owned Texas digital product company building practical software tools for local businesses.</p>
             <p class="hero-supporting">Penguin Falls LLC owns and operates Twofer, a real-time local deal platform that helps businesses activate slow hours through controlled, limited-time offers.</p>
             <div class="hero-actions">
@@ -79,18 +80,20 @@
 
     <section class="section" id="twofer" aria-labelledby="twofer-title">
       <div class="container">
-        <div class="section-heading">
-          <div class="section-heading-text">
-            <span class="section-kicker">Our First Product</span>
-            <h2 id="twofer-title">Twofer</h2>
+        <div class="twofer-panel">
+          <div class="section-heading">
+            <div class="section-heading-text">
+              <span class="section-kicker">Our First Product</span>
+              <h2 id="twofer-title">Twofer</h2>
+            </div>
           </div>
-        </div>
-        <div class="content-narrow product-copy">
-          <p>Twofer is a real-time demand activation platform for local businesses. It helps coffee shops, caf&eacute;s, bakeries, and other local merchants create controlled, limited-time BOGO offers designed to bring customers in during slower periods.</p>
-          <p>Twofer focuses on simple offer creation, live local discovery, and frictionless QR-based redemption.</p>
-          <div class="product-actions">
-            <a class="button" href="https://www.twoferapp.com" target="_blank" rel="noopener">Visit TwoferApp.com <span class="external-arrow" aria-hidden="true">&rarr;</span></a>
-            <p class="small-note">Twofer is owned and operated by Penguin Falls LLC.</p>
+          <div class="content-narrow product-copy">
+            <p>Twofer is a real-time demand activation platform for local businesses. It helps coffee shops, caf&eacute;s, bakeries, and other local merchants create controlled, limited-time BOGO offers designed to bring customers in during slower periods.</p>
+            <p>Twofer focuses on simple offer creation, live local discovery, and frictionless QR-based redemption.</p>
+            <div class="product-actions">
+              <a class="button" href="https://www.twoferapp.com" target="_blank" rel="noopener">Visit TwoferApp.com <span class="external-arrow" aria-hidden="true">&rarr;</span></a>
+              <p class="small-note">Twofer is owned and operated by Penguin Falls LLC.</p>
+            </div>
           </div>
         </div>
       </div>
@@ -163,6 +166,9 @@
       const button = document.querySelector(".menu-toggle"), menu = document.querySelector("#site-menu");
       if (!button || !menu) return;
       const setOpen = (open) => { button.setAttribute("aria-expanded", String(open)); menu.classList.toggle("is-open", open); document.body.classList.toggle("menu-open", open); };
+      const setHeaderState = () => document.querySelector(".site-header").classList.toggle("is-scrolled", window.scrollY > 24);
+      setHeaderState();
+      window.addEventListener("scroll", setHeaderState, { passive: true });
       button.addEventListener("click", () => setOpen(button.getAttribute("aria-expanded") !== "true"));
       menu.querySelectorAll("a").forEach((link) => link.addEventListener("click", () => setOpen(false)));
       document.addEventListener("keydown", (event) => { if (event.key === "Escape") { setOpen(false); button.focus(); } });
