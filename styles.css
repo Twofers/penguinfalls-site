@@ -11,7 +11,7 @@
   --border:      #E2E9F0;  /* hairline borders, card edges */
 
   /* Type */
-  --font-display: "Space Grotesk", system-ui, sans-serif;  /* wordmark + headings */
+  --font-display: "Geist", "Inter", system-ui, sans-serif;  /* wordmark + headings */
   --font-body:    "Inter", system-ui, -apple-system, sans-serif;  /* body, nav, buttons */
 
   /* Layout */
@@ -30,6 +30,7 @@ html {
 
 body {
   margin: 0;
+  padding-top: 68px;
   background: var(--bg);
   color: var(--ink);
   font-family: var(--font-body);
@@ -78,7 +79,7 @@ h3 {
   font-family: var(--font-display);
   font-weight: 600;
   line-height: 1.12;
-  letter-spacing: 0;
+  letter-spacing: -0.02em;
 }
 
 h1 {
@@ -100,9 +101,12 @@ h3 {
 }
 
 .site-header {
-  position: sticky;
+  position: fixed;
   top: 0;
-  z-index: 20;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  width: 100%;
   border-bottom: 1px solid var(--border);
   background: var(--bg);
 }
@@ -121,6 +125,7 @@ h3 {
   font-size: 20px;
   font-weight: 600;
   line-height: 1;
+  letter-spacing: -0.02em;
   text-decoration: none;
 }
 
@@ -243,7 +248,7 @@ h3 {
 
 .section,
 .hero {
-  padding: 72px 0;
+  padding: 64px 0;
   scroll-margin-top: 86px;
 }
 
@@ -335,24 +340,13 @@ h3 {
   max-width: 780px;
 }
 
-.product-panel {
-  display: grid;
-  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
-  gap: 42px;
-  align-items: flex-start;
-}
-
-.product-panel .section-heading {
-  margin-bottom: 0;
-}
-
 .product-name {
   margin-top: 4px;
   font-size: 34px;
 }
 
 .product-copy {
-  max-width: 650px;
+  max-width: 780px;
 }
 
 .product-actions {
@@ -514,7 +508,7 @@ h3 {
 
   .section,
   .hero {
-    padding: 112px 0;
+    padding: 80px 0;
   }
 
   .falls-line {
@@ -525,6 +519,10 @@ h3 {
 @media (max-width: 720px) {
   .header-inner {
     min-height: 64px;
+  }
+
+  body {
+    padding-top: 64px;
   }
 
   .menu-toggle {
@@ -574,13 +572,8 @@ h3 {
     flex-direction: column;
   }
 
-  .product-panel,
   .cards {
     grid-template-columns: 1fr;
-  }
-
-  .product-panel {
-    gap: 26px;
   }
 
   .product-name {
