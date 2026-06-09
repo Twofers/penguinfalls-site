@@ -1,7 +1,7 @@
 :root {
   /* Color */
   --navy:        #15263F;  /* headings, header text, footer background */
-  --ink:         #33414F;  /* body text */
+  --ink:         #3A4A5F;  /* body text */
   --muted:       #5C6B7A;  /* secondary text, captions */
   --bg:          #FFFFFF;  /* main background */
   --bg-soft:     #F4F7FA;  /* alternating section background */
@@ -170,6 +170,10 @@ h3 {
   color: var(--bg);
 }
 
+.button .external-arrow {
+  margin-left: 0.4em;
+}
+
 .text-link {
   display: inline-flex;
   align-items: center;
@@ -237,8 +241,9 @@ h3 {
   border: 0;
 }
 
-.section {
-  padding: 64px 0;
+.section,
+.hero {
+  padding: 72px 0;
   scroll-margin-top: 86px;
 }
 
@@ -247,10 +252,8 @@ h3 {
 }
 
 .hero {
-  min-height: calc(100vh - 68px);
   display: flex;
   align-items: center;
-  padding: 80px 0 92px;
 }
 
 .hero-grid {
@@ -262,10 +265,9 @@ h3 {
 
 .falls-line {
   width: 3px;
-  height: 132px;
-  margin-top: 8px;
+  height: 58px;
   border-radius: 999px;
-  background: linear-gradient(180deg, var(--ice), var(--accent), var(--navy));
+  background: linear-gradient(180deg, var(--ice) 0%, var(--navy) 100%);
 }
 
 .hero-content {
@@ -311,22 +313,22 @@ h3 {
   display: grid;
   grid-template-columns: 3px minmax(0, 1fr);
   gap: 14px;
-  align-items: start;
+  align-items: stretch;
   margin-bottom: 28px;
 }
 
 .section-heading::before {
   display: block;
   width: 3px;
-  height: 34px;
-  margin-top: 4px;
+  min-height: 40px;
   border-radius: 999px;
-  background: linear-gradient(180deg, var(--ice), var(--accent), var(--navy));
+  background: linear-gradient(180deg, var(--ice) 0%, var(--navy) 100%);
   content: "";
 }
 
 .section-heading-text {
   min-width: 0;
+  align-self: start;
 }
 
 .content-narrow {
@@ -337,7 +339,11 @@ h3 {
   display: grid;
   grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
   gap: 42px;
-  align-items: start;
+  align-items: flex-start;
+}
+
+.product-panel .section-heading {
+  margin-bottom: 0;
 }
 
 .product-name {
@@ -364,11 +370,16 @@ h3 {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 18px;
+  align-items: stretch;
 }
 
 .card {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
   min-height: 100%;
   border: 1px solid var(--border);
+  border-top: 1px solid var(--border);
   border-radius: var(--radius);
   background: var(--bg);
   padding: 28px;
@@ -380,6 +391,16 @@ h3 {
 
 .card p {
   margin-top: 12px;
+}
+
+.card h3::before {
+  display: block;
+  width: 28px;
+  height: 3px;
+  margin-bottom: 14px;
+  border-radius: 999px;
+  background: var(--accent);
+  content: "";
 }
 
 .contact-list {
@@ -491,12 +512,13 @@ h3 {
     font-size: 20px;
   }
 
-  .section {
-    padding: 96px 0;
+  .section,
+  .hero {
+    padding: 112px 0;
   }
 
-  .hero {
-    padding: 104px 0 112px;
+  .falls-line {
+    height: 88px;
   }
 }
 
@@ -538,17 +560,9 @@ h3 {
     width: 100%;
   }
 
-  .hero {
-    min-height: auto;
-  }
-
   .hero-grid {
     grid-template-columns: 3px minmax(0, 1fr);
     gap: 16px;
-  }
-
-  .falls-line {
-    height: 112px;
   }
 
   .hero-subheadline {
