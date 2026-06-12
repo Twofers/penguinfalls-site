@@ -5,33 +5,42 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Terms of Use | Penguin Falls LLC</title>
   <meta name="description" content="Terms of Use for the Penguin Falls LLC informational company website.">
-  <link rel="canonical" href="https://www.penguinfalls.com/terms.html">
+  <link rel="canonical" href="https://www.penguinfalls.com/terms">
   <link rel="icon" href="assets/favicon.ico" sizes="any">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
-  <script type="application/json" id="site-contact-config">
-    {"companyContactEmail":"contact@penguinfalls.com","twoferSupportEmail":"support@twoferapp.com"}
-  </script>
+  <script src="site.js" defer></script>
 </head>
 <body>
   <header class="site-header">
     <div class="container header-inner">
-      <a class="wordmark" href="index.html">Penguin Falls</a>
+      <a class="wordmark" href="/" aria-label="Penguin Falls home">Penguin Falls</a>
+      <button class="menu-toggle" type="button" aria-controls="site-menu" aria-expanded="false">
+        <span class="visually-hidden">Menu</span>
+        <span class="menu-icon" aria-hidden="true"></span>
+      </button>
+      <nav class="site-menu" id="site-menu" aria-label="Primary navigation">
+        <div class="nav-links">
+          <a class="nav-link" href="/#about">About</a>
+          <a class="nav-link" href="/#twofer">Twofer</a>
+          <a class="nav-link" href="/#contact">Contact</a>
+        </div>
+        <a class="button" href="https://www.twoferapp.com" target="_blank" rel="noopener">Visit Twofer <span class="external-arrow" aria-hidden="true">&rarr;</span></a>
+      </nav>
     </div>
   </header>
 
   <main class="legal-main">
     <div class="container">
-      <a class="back-link" href="index.html">Back to Penguin Falls</a>
+      <a class="back-link" href="/">Back to Penguin Falls</a>
       <article class="legal-article">
         <header>
           <h1>Terms of Use</h1>
           <p class="last-updated">Last updated: June 9, 2026</p>
-          <p class="legal-note">These are general template terms for an informational company website and should be reviewed by qualified legal counsel before Penguin Falls LLC relies on them legally.</p>
         </header>
 
         <section class="legal-section" aria-labelledby="terms-use">
@@ -66,7 +75,7 @@
 
         <section class="legal-section" aria-labelledby="terms-contact">
           <h2 id="terms-contact">Contact</h2>
-          <p>Questions about these Terms of Use can be sent to <a href="#" data-email="company"></a>.</p>
+          <p>Questions about these Terms of Use can be sent to <a href="mailto:support@twoferapp.com">support@twoferapp.com</a>.</p>
         </section>
       </article>
     </div>
@@ -79,25 +88,12 @@
         <p>Penguin Falls LLC owns and operates Twofer.</p>
       </div>
       <nav class="footer-links" aria-label="Footer navigation">
-        <a href="index.html#contact">Contact</a>
-        <a href="privacy.html">Privacy Policy</a>
-        <a href="terms.html">Terms of Use</a>
+        <a href="/#contact">Contact</a>
+        <a href="/privacy">Privacy Policy</a>
+        <a href="/terms">Terms of Use</a>
         <a href="https://www.twoferapp.com" target="_blank" rel="noopener">Twofer</a>
       </nav>
     </div>
   </footer>
-  <script>
-    (() => {
-      const config = JSON.parse(document.querySelector("#site-contact-config").textContent);
-      const emails = { company: config.companyContactEmail, support: config.twoferSupportEmail };
-      document.querySelectorAll("[data-email]").forEach((link) => {
-        const email = emails[link.dataset.email];
-        if (email) { link.href = `mailto:${email}`; link.textContent = email; }
-      });
-      const setHeaderState = () => document.querySelector(".site-header").classList.toggle("is-scrolled", window.scrollY > 24);
-      setHeaderState();
-      window.addEventListener("scroll", setHeaderState, { passive: true });
-    })();
-  </script>
 </body>
 </html>

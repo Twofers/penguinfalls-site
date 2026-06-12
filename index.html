@@ -20,11 +20,9 @@
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
-  <script type="application/json" id="site-contact-config">
-    {"companyContactEmail":"contact@penguinfalls.com","twoferSupportEmail":"support@twoferapp.com"}
-  </script>
+  <script src="site.js" defer></script>
 </head>
 <body id="top">
   <header class="site-header">
@@ -132,7 +130,7 @@
         <div class="content-narrow">
           <p>For company, legal, partnership, or general inquiries, contact Penguin Falls LLC.</p>
           <div class="contact-list">
-            <p><a href="mailto:contact@penguinfalls.com" data-email="company">contact@penguinfalls.com</a></p>
+            <p><a href="mailto:support@twoferapp.com">support@twoferapp.com</a></p>
           </div>
         </div>
       </div>
@@ -147,31 +145,11 @@
       </div>
       <nav class="footer-links" aria-label="Footer navigation">
         <a href="#contact">Contact</a>
-        <a href="privacy.html">Privacy Policy</a>
-        <a href="terms.html">Terms of Use</a>
+        <a href="/privacy">Privacy Policy</a>
+        <a href="/terms">Terms of Use</a>
         <a href="https://www.twoferapp.com" target="_blank" rel="noopener">Twofer</a>
       </nav>
     </div>
   </footer>
-
-  <script>
-    (() => {
-      const config = JSON.parse(document.querySelector("#site-contact-config").textContent);
-      const emails = { company: config.companyContactEmail };
-      document.querySelectorAll("[data-email]").forEach((link) => {
-        const email = emails[link.dataset.email];
-        if (email) { link.href = `mailto:${email}`; link.textContent = email; }
-      });
-      const button = document.querySelector(".menu-toggle"), menu = document.querySelector("#site-menu");
-      if (!button || !menu) return;
-      const setOpen = (open) => { button.setAttribute("aria-expanded", String(open)); menu.classList.toggle("is-open", open); document.body.classList.toggle("menu-open", open); };
-      const setHeaderState = () => document.querySelector(".site-header").classList.toggle("is-scrolled", window.scrollY > 24);
-      setHeaderState();
-      window.addEventListener("scroll", setHeaderState, { passive: true });
-      button.addEventListener("click", () => setOpen(button.getAttribute("aria-expanded") !== "true"));
-      menu.querySelectorAll("a").forEach((link) => link.addEventListener("click", () => setOpen(false)));
-      document.addEventListener("keydown", (event) => { if (event.key === "Escape") { setOpen(false); button.focus(); } });
-    })();
-  </script>
 </body>
 </html>
