@@ -3,11 +3,12 @@
   --canvas-2: #efe8dc;
   --ink: #111b2d;
   --ink-soft: #36534f;
-  --muted: #6F8884;
+  --muted: #5B7470;
   --teal: #173F3D;
   --teal-2: #0b2f2d;
   --cream: #F7F3EC;
   --amber: #D58E32;
+  --amber-ink: #9F5D13;
   --rule: rgba(23, 63, 61, 0.16);
   --rule-dark: rgba(247, 243, 236, 0.18);
   --shadow: 0 32px 90px rgba(8, 22, 24, 0.28);
@@ -61,8 +62,12 @@ a:hover {
 
 a:focus-visible,
 button:focus-visible {
-  outline: 2px solid var(--amber);
+  outline: 2px solid var(--amber-ink);
   outline-offset: 4px;
+}
+
+.twofer-section a:focus-visible {
+  outline-color: #f5c981;
 }
 
 p,
@@ -102,8 +107,29 @@ h2 {
   padding: 0 var(--gutter);
 }
 
+.skip-link {
+  position: fixed;
+  top: 12px;
+  left: var(--gutter);
+  z-index: 100;
+  padding: 8px 12px;
+  background: var(--ink);
+  color: var(--cream);
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  transform: translateY(-160%);
+  transition: transform 150ms ease;
+}
+
+.skip-link:focus {
+  color: var(--cream);
+  transform: translateY(0);
+}
+
 .site-header {
-  position: relative;
+  position: sticky;
+  top: 0;
   z-index: 20;
   height: 74px;
   border-bottom: 1px solid transparent;
@@ -383,7 +409,7 @@ body.menu-open .site-header {
 
 .section-number {
   grid-column: 1 / span 1;
-  color: var(--amber);
+  color: var(--amber-ink);
   font-family: var(--font-serif);
   font-size: 18px;
   font-weight: 600;
@@ -457,18 +483,19 @@ body.menu-open .site-header {
   flex-wrap: wrap;
   gap: 12px 18px;
   margin-top: 32px;
-  padding-top: 26px;
+  padding: 26px 0 0;
   border-top: 1px solid var(--rule-dark);
+  list-style: none;
 }
 
-.attributes span {
+.attributes li {
   position: relative;
   color: rgba(247, 243, 236, 0.9);
   font-size: 15px;
   font-weight: 700;
 }
 
-.attributes span + span::before {
+.attributes li + li::before {
   display: inline-block;
   width: 5px;
   height: 5px;
@@ -861,7 +888,7 @@ body.menu-open .site-header {
     gap: 10px;
   }
 
-  .attributes span + span::before {
+  .attributes li + li::before {
     display: none;
   }
 

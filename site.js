@@ -1,8 +1,24 @@
 (() => {
   const header = document.querySelector(".site-header");
-  const setHeaderState = () => header.classList.toggle("is-scrolled", window.scrollY > 24);
-  setHeaderState();
-  window.addEventListener("scroll", setHeaderState, { passive: true });
+  let renderedHeaderState;
+  let nextHeaderState = false;
+  let headerFrame = 0;
+
+  const renderHeaderState = () => {
+    headerFrame = 0;
+    if (nextHeaderState === renderedHeaderState) return;
+    header.classList.toggle("is-scrolled", nextHeaderState);
+    renderedHeaderState = nextHeaderState;
+  };
+
+  const queueHeaderState = () => {
+    nextHeaderState = window.scrollY > 24;
+    if (!headerFrame) headerFrame = window.requestAnimationFrame(renderHeaderState);
+  };
+
+  renderHeaderState();
+  window.requestAnimationFrame(queueHeaderState);
+  window.addEventListener("scroll", queueHeaderState, { passive: true });
 
   const button = document.querySelector(".menu-toggle");
   const menu = document.querySelector("#site-menu");
