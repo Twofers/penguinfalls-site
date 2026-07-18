@@ -33,6 +33,9 @@
 
   button.addEventListener("click", () => setOpen(!isOpen()));
   menu.querySelectorAll("a").forEach((link) => link.addEventListener("click", () => setOpen(false)));
+  window.matchMedia("(min-width: 769px)").addEventListener("change", (event) => {
+    if (event.matches) setOpen(false);
+  });
   document.addEventListener("keydown", (event) => {
     if (event.key === "Escape" && isOpen()) {
       setOpen(false);

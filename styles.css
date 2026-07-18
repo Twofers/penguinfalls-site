@@ -300,8 +300,7 @@ body.menu-open .site-header {
 }
 
 .primary-link::after,
-.dark-link::after,
-.email-link::after {
+.dark-link::after {
   display: block;
   width: 100%;
   height: 1px;
@@ -314,15 +313,13 @@ body.menu-open .site-header {
 }
 
 .primary-link,
-.dark-link,
-.email-link {
+.dark-link {
   flex-direction: column;
   align-items: flex-start;
 }
 
 .primary-link:hover::after,
-.dark-link:hover::after,
-.email-link:hover::after {
+.dark-link:hover::after {
   transform: scaleX(1);
 }
 
@@ -335,8 +332,6 @@ body.menu-open .site-header {
 }
 
 .signal-field {
-  position: relative;
-  isolation: isolate;
   grid-column: 8 / span 5;
   min-height: 560px;
   align-self: stretch;
@@ -344,55 +339,10 @@ body.menu-open .site-header {
   place-items: center;
 }
 
-.signal-field::before {
-  position: absolute;
-  width: min(94%, 520px);
-  aspect-ratio: 1;
-  border: 1px solid rgba(23, 63, 61, 0.13);
-  content: "";
-  transform: rotate(-6deg);
-}
-
-.signal-field::after {
-  position: absolute;
-  width: min(86%, 460px);
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(213, 142, 50, 0.88), transparent);
-  content: "";
-  transform: translateY(145px);
-}
-
 .signal-symbol {
-  position: relative;
-  z-index: 2;
   width: min(58%, 310px);
   height: auto;
   filter: drop-shadow(0 30px 45px rgba(17, 27, 45, 0.12));
-}
-
-.signal-rail {
-  position: absolute;
-  z-index: 1;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(23, 63, 61, 0.26), transparent);
-}
-
-.signal-rail-one {
-  top: 25%;
-  right: 8%;
-  width: 64%;
-}
-
-.signal-rail-two {
-  top: 50%;
-  left: 5%;
-  width: 72%;
-}
-
-.signal-rail-three {
-  right: 2%;
-  bottom: 28%;
-  width: 58%;
 }
 
 .company-section {
@@ -622,6 +572,8 @@ body.menu-open .site-header {
 .email-link {
   display: inline-flex;
   margin-top: 22px;
+  padding-bottom: 4px;
+  border-bottom: 1px solid rgba(23, 63, 61, 0.52);
   color: var(--teal);
   font-size: clamp(1.55rem, 2.2vw, 2.25rem);
   font-weight: 800;
@@ -629,6 +581,11 @@ body.menu-open .site-header {
   overflow-wrap: anywhere;
   white-space: nowrap;
   text-decoration: none;
+  transition: border-color 180ms ease, color 180ms ease;
+}
+
+.email-link:hover {
+  border-bottom-color: currentColor;
 }
 
 .site-footer {
