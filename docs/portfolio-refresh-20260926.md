@@ -58,4 +58,20 @@ The website uses a Vercel preview gate before promotion of the same static files
 
 ## Production
 
-Pending preview verification and promotion; record the production result below.
+Published September 26, 2026 after preview verification.
+
+- Reviewed website source: `4b2cc2dc70bd8e12d8f9cd69ab5c797936779abe`,
+  pushed to `Twofers/penguinfalls-site` on `main`.
+- Promotion created production deployment `dpl_Ctmuz4yfcTMjEmX1kCPwqsweMGqo`.
+- GitHub synchronization then built the same reviewed website source as
+  `dpl_BAoiQE97qPiZnqwQGxf1xeQH9LZt`; Vercel reported it Ready.
+- Both https://www.penguinfalls.com and https://penguinfalls.com serve the refresh.
+- All 17 checked production HTML/CSS/JS/sitemap/robots routes returned HTTP 200
+  and matched the reviewed source after normalizing Windows/Linux line endings.
+  Results are in `production-checks-20260926.json`.
+- Public source-only and environment-file probes returned 404. The custom missing
+  page returned 404, and social/product images returned 200.
+- The live homepage rendered all six products without image failures or page
+  overflow. Navigation to the live support page displayed all six app contacts.
+- A final documentation-only commit records these results. Documentation is
+  excluded from the hosted site and does not change the reviewed public files.

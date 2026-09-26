@@ -1,0 +1,87 @@
+[
+  {
+    "Route": "/",
+    "Status": 200,
+    "MatchesReviewedSource": true
+  },
+  {
+    "Route": "/twofer",
+    "Status": 200,
+    "MatchesReviewedSource": true
+  },
+  {
+    "Route": "/sightlines",
+    "Status": 200,
+    "MatchesReviewedSource": true
+  },
+  {
+    "Route": "/penguin-bounce",
+    "Status": 200,
+    "MatchesReviewedSource": true
+  },
+  {
+    "Route": "/penguin-slide",
+    "Status": 200,
+    "MatchesReviewedSource": true
+  },
+  {
+    "Route": "/penguin-express",
+    "Status": 200,
+    "MatchesReviewedSource": true
+  },
+  {
+    "Route": "/penguin-crash",
+    "Status": 200,
+    "MatchesReviewedSource": true
+  },
+  {
+    "Route": "/support",
+    "Status": 200,
+    "MatchesReviewedSource": true
+  },
+  {
+    "Route": "/privacy",
+    "Status": 200,
+    "MatchesReviewedSource": true
+  },
+  {
+    "Route": "/terms",
+    "Status": 200,
+    "MatchesReviewedSource": true
+  },
+  {
+    "Route": "/sightlines/support",
+    "Status": 200,
+    "MatchesReviewedSource": true
+  },
+  {
+    "Route": "/sightlines/privacy",
+    "Status": 200,
+    "MatchesReviewedSource": true
+  },
+  {
+    "Route": "/sightlines/terms",
+    "Status": 200,
+    "MatchesReviewedSource": true
+  },
+  {
+    "Route": "/portfolio.css",
+    "Status": 200,
+    "MatchesReviewedSource": true
+  },
+  {
+    "Route": "/portfolio.js",
+    "Status": 200,
+    "MatchesReviewedSource": true
+  },
+  {
+    "Route": "/sitemap.xml",
+    "Status": 200,
+    "MatchesReviewedSource": true
+  },
+  {
+    "Route": "/robots.txt",
+    "Status": 200,
+    "MatchesReviewedSource": true
+  }
+]
