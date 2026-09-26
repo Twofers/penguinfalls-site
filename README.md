@@ -1,46 +1,17 @@
-# Penguin Falls — apps and games
+# Penguin Falls LLC Static Site
 
-Static HTML, CSS, and a small navigation script, hosted by the existing
-`penguinfalls-site` Vercel project at https://www.penguinfalls.com.
-No framework, server, package install, or build step is required for hosting.
+Plain HTML, CSS, and a small shared `site.js` for Vercel hosting. There is no framework, build step, package manager, or server code.
 
-## Edit and preview
+## Preview Locally
 
-App content, verified store destinations, and support resources live in
-`data/apps.json`. Regenerate the committed pages after changing that catalog or
-`scripts/build-site.py`:
+The site uses clean URLs (`/privacy`, `/terms`), so preview with a server that resolves them:
 
 ```powershell
-python scripts/build-site.py
-python scripts/preview.py
+npx serve .
 ```
 
-Open http://127.0.0.1:8767. The local preview supports the same clean page URLs.
-The design and menu code are in `portfolio.css` and `portfolio.js`. Retained
-`styles.css` and `site.js` record the previous live site; new pages use the
-portfolio files. Existing Sightlines policy/support pages have their own CSS.
+Then open the URL it prints (usually `http://localhost:3000`). Plain `python -m http.server` also works, but only with the `.html` extensions typed in the address bar.
 
-The site includes six product pages, `/support`, `/privacy`, `/terms`, and the
-existing `/sightlines/support`, `/sightlines/privacy`, `/sightlines/terms` URLs.
-Legacy `/products`, `/contact`, `/#company`, `/#twofer`, and `/#top` links remain
-usable. The website policies cover this informational website; each app's own
-resources are linked from the support directory.
+## Deploy
 
-## Artwork
-
-`data/asset-sources.json` records the current public App Store images. Imported
-screens retain their actual UI and are compressed as WebP. To deliberately
-refresh artwork, first update the store snapshot, then run the download and
-preparation scripts. Image preparation needs Pillow and uses Windows Georgia
-and Segoe UI fonts for the 1200 × 630 social previews. It is not a deployment step.
-
-## Release
-
-Run local checks and visually review desktop and phone layouts. Create a Vercel
-preview and verify the product, store, and support routes before promoting the
-same deployment. Exclude scripts, local caches, environment files, data sources,
-and documentation from the deployment via `.vercelignore`.
-
-Keep the reviewed source in GitHub as part of publishing. Do not deploy an older
-repository snapshot over a more recent live release. See
-`docs/portfolio-refresh-20260926.md` for this release's provenance and checks.
+Use the Vercel flow from Section 12 of `../penguinfalls-build-plan.md`: put this folder in a GitHub repo, import it into Vercel as "Other" or "No framework", leave the build command empty, keep the output directory as the root, deploy, then point `penguinfalls.com` and `www.penguinfalls.com` to the Vercel project.
