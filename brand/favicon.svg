@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 256 256" role="img" aria-labelledby="title">
+  <title id="title">Penguin Falls app icon</title>
+  <rect x="8" y="8" width="240" height="240" rx="52" fill="#173F3D"/>
+  <g transform="translate(18 17) scale(.86)" fill="none" stroke="#F7F3EC" stroke-width="16" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M50 44 V128 C50 163 73 184 108 184 H119"/>
+    <path d="M98 44 V107 C98 139 118 157 149 157 H160"/>
+    <path d="M146 44 V88 C146 114 162 130 187 130"/>
+  </g>
+  <circle cx="198.6" cy="141.7" r="8.6" fill="#D58E32"/>
+</svg>

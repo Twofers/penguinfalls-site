@@ -1,9 +1,30 @@
 {
   "cleanUrls": true,
   "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/products",
+      "destination": "/#apps",
+      "permanent": false
+    },
+    {
+      "source": "/contact",
+      "destination": "/#contact",
+      "permanent": false
+    }
+  ],
   "headers": [
     {
       "source": "/assets/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/brand/(.*)",
       "headers": [
         {
           "key": "Cache-Control",

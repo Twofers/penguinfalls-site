@@ -1,0 +1,9 @@
+.git
+.env*
+.asset-cache
+scripts
+data
+docs
+README.md
+**/__pycache__
+**/*.pyc

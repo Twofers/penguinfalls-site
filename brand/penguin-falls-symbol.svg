@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256" role="img" aria-labelledby="title desc">
+  <title id="title">Penguin Falls symbol</title>
+  <desc id="desc">Three rounded cascading paths followed by a warm amber first-mover node.</desc>
+  <g fill="none" stroke="#173F3D" stroke-width="16" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M50 44 V128 C50 163 73 184 108 184 H119"/>
+    <path d="M98 44 V107 C98 139 118 157 149 157 H160"/>
+    <path d="M146 44 V88 C146 114 162 130 187 130"/>
+  </g>
+  <circle cx="210" cy="145" r="10" fill="#D58E32"/>
+</svg>

@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://www.penguinfalls.com/</loc>
-    <lastmod>2026-06-12</lastmod>
-  </url>
-  <url>
-    <loc>https://www.penguinfalls.com/privacy</loc>
-    <lastmod>2026-06-12</lastmod>
-  </url>
-  <url>
-    <loc>https://www.penguinfalls.com/terms</loc>
-    <lastmod>2026-06-12</lastmod>
-  </url>
+  <url><loc>https://www.penguinfalls.com/</loc><lastmod>2026-09-26</lastmod></url>
+  <url><loc>https://www.penguinfalls.com/support</loc><lastmod>2026-09-26</lastmod></url>
+  <url><loc>https://www.penguinfalls.com/privacy</loc><lastmod>2026-09-26</lastmod></url>
+  <url><loc>https://www.penguinfalls.com/terms</loc><lastmod>2026-09-26</lastmod></url>
+  <url><loc>https://www.penguinfalls.com/twofer</loc><lastmod>2026-09-26</lastmod></url>
+  <url><loc>https://www.penguinfalls.com/sightlines</loc><lastmod>2026-09-26</lastmod></url>
+  <url><loc>https://www.penguinfalls.com/penguin-bounce</loc><lastmod>2026-09-26</lastmod></url>
+  <url><loc>https://www.penguinfalls.com/penguin-slide</loc><lastmod>2026-09-26</lastmod></url>
+  <url><loc>https://www.penguinfalls.com/penguin-express</loc><lastmod>2026-09-26</lastmod></url>
+  <url><loc>https://www.penguinfalls.com/penguin-crash</loc><lastmod>2026-09-26</lastmod></url>
+  <url><loc>https://www.penguinfalls.com/sightlines/support</loc><lastmod>2026-09-20</lastmod></url>
+  <url><loc>https://www.penguinfalls.com/sightlines/privacy</loc><lastmod>2026-09-20</lastmod></url>
+  <url><loc>https://www.penguinfalls.com/sightlines/terms</loc><lastmod>2026-09-20</lastmod></url>
 </urlset>

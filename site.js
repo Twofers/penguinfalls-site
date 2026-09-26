@@ -1,8 +1,32 @@
 (() => {
   const header = document.querySelector(".site-header");
-  const setHeaderState = () => header.classList.toggle("is-scrolled", window.scrollY > 24);
-  setHeaderState();
-  window.addEventListener("scroll", setHeaderState, { passive: true });
+  let renderedHeaderState;
+  let nextHeaderState = false;
+  let headerFrame = 0;
+
+  const renderHeaderState = () => {
+    headerFrame = 0;
+    if (nextHeaderState === renderedHeaderState) return;
+    header.classList.toggle("is-scrolled", nextHeaderState);
+    renderedHeaderState = nextHeaderState;
+  };
+
+  const queueHeaderState = () => {
+    nextHeaderState = window.scrollY > 24;
+    if (!headerFrame) headerFrame = window.requestAnimationFrame(renderHeaderState);
+  };
+
+  renderHeaderState();
+  window.requestAnimationFrame(queueHeaderState);
+  window.addEventListener("scroll", queueHeaderState, { passive: true });
+
+  const skipLink = document.querySelector(".skip-link");
+  const main = document.querySelector("#main-content");
+  if (skipLink && main) {
+    skipLink.addEventListener("click", () => {
+      window.requestAnimationFrame(() => main.focus({ preventScroll: true }));
+    });
+  }
 
   const button = document.querySelector(".menu-toggle");
   const menu = document.querySelector("#site-menu");
@@ -17,6 +41,14 @@
 
   button.addEventListener("click", () => setOpen(!isOpen()));
   menu.querySelectorAll("a").forEach((link) => link.addEventListener("click", () => setOpen(false)));
+  window.matchMedia("(min-width: 769px)").addEventListener("change", (event) => {
+    if (event.matches) setOpen(false);
+  });
+  document.addEventListener("click", (event) => {
+    if (isOpen() && event.target instanceof Element && !event.target.closest(".site-header")) {
+      setOpen(false);
+    }
+  });
   document.addEventListener("keydown", (event) => {
     if (event.key === "Escape" && isOpen()) {
       setOpen(false);
