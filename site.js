@@ -1,4 +1,5 @@
 (() => {
+  document.documentElement.classList.add('js-enabled');
   const header = document.querySelector(".site-header");
   let renderedHeaderState;
   let nextHeaderState = false;
@@ -54,5 +55,8 @@
       setOpen(false);
       button.focus();
     }
+  });
+  document.addEventListener('focusin', event => {
+    if (isOpen() && event.target instanceof Element && !event.target.closest('.site-header')) setOpen(false);
   });
 })();

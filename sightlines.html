@@ -20,7 +20,10 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=PT+Serif:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/refresh.css">
   <script src="/site.js" defer></script>
+  <script src="/walkthrough.js" defer></script>
+  <script src="/analytics.js" defer></script>
 </head>
 <body id="top">
   <a class="skip-link" href="#main-content">Skip to content</a>
@@ -34,9 +37,9 @@
         <span class="menu-icon" aria-hidden="true"></span>
       </button>
       <nav class="site-menu" id="site-menu" aria-label="Primary navigation">
-        <a href="/#company">Company</a>
         <a href="/#twofer">Twofer</a>
         <a href="/sightlines" aria-current="page">Sightlines</a>
+        <a href="/#company">Company</a>
         <a href="/#contact">Contact</a>
       </nav>
     </div>
@@ -45,11 +48,14 @@
     <section class="hero product-hero" aria-labelledby="sightlines-title">
       <div class="container hero-grid">
         <div class="hero-copy">
-          <p class="legal-line">An app by Penguin Falls</p>
+          <p class="legal-line">An iPhone app by Penguin Falls</p>
           <h1 id="sightlines-title">Sightlines</h1>
-          <p>Point your phone. Explore what lies ahead. Use your location and compass to discover likely addresses and roads nearby, or follow a line toward places farther away.</p>
-          <a class="primary-link" href="https://apps.apple.com/us/app/sightlines-direction-finder/id6808024469" target="_blank" rel="noopener">View on the App Store &#8599;</a>
-          <p class="availability">For iPhone &middot; Free download &middot; Optional Plus subscription</p>
+          <p>What lies in that direction? Point your phone to explore likely addresses and roads nearby, or follow a line across cities and oceans.</p>
+          <nav class="download-links" aria-label="Explore Sightlines">
+            <a class="primary-link" href="https://apps.apple.com/us/app/sightlines-direction-finder/id6808024469" target="_blank" rel="noopener" data-track="sightlines_app_store">Get for iPhone <span aria-hidden="true">&#8599;</span></a>
+            <a class="secondary-link" href="#how-it-works" data-track="sightlines_demo">See how it works <span aria-hidden="true">&darr;</span></a>
+          </nav>
+          <p class="download-note">Free download &middot; Optional Plus subscription</p>
           <nav class="product-links" aria-label="Sightlines help and policies">
             <a href="/sightlines/support">Support</a>
             <a href="/sightlines/privacy">Privacy</a>
@@ -59,29 +65,58 @@
         <div class="screen-composition single-screen" role="group" aria-label="Sightlines Night Mode screen">
           <figure class="phone-screen">
             <img src="/assets/apps/sightlines-night-mode-20260926.webp" width="552" height="1200" fetchpriority="high" alt="Sightlines Night Mode showing a westward direction and nearby address candidates">
-            <figcaption>Explore a direction in Night Mode</figcaption>
+            <figcaption><strong>A heading. A few possibilities.</strong> Night Mode shows likely nearby addresses in the direction you&rsquo;re facing.</figcaption>
           </figure>
         </div>
       </div>
     </section>
-    <section class="company-section" aria-labelledby="explore-title">
+    <section class="walkthrough-section" id="how-it-works" aria-labelledby="explore-title">
       <div class="container">
-        <h2 class="feature-heading" id="explore-title">Three ways to explore.</h2>
-        <div class="app-features">
-          <section>
-            <h3>Nearby</h3>
-            <p>Explore likely addresses and roads with a directional map cone. Adjust your range and angle, then review candidates with confidence information.</p>
+        <p class="eyebrow">A quick look inside</p>
+        <h2 class="feature-heading" id="explore-title">Point. Review. Explore.</h2>
+        <p>Follow the three steps below to see what Sightlines does. These are real app screens, with example locations.</p>
+        <div class="walkthrough-tabs" role="tablist" aria-label="Sightlines walkthrough" hidden>
+          <button type="button" role="tab" id="step-point" aria-controls="panel-point" aria-selected="true" tabindex="0" data-track="demo_point">1. Point</button>
+          <button type="button" role="tab" id="step-review" aria-controls="panel-review" aria-selected="false" tabindex="-1" data-track="demo_review">2. Review</button>
+          <button type="button" role="tab" id="step-explore" aria-controls="panel-explore" aria-selected="false" tabindex="-1" data-track="demo_explore">3. Explore</button>
+        </div>
+        <div class="walkthrough-panels">
+          <section class="walkthrough-panel" id="panel-point" aria-labelledby="point-title">
+            <img src="/assets/apps/sightlines-screen-1-20260926.webp" width="552" height="1200" loading="lazy" alt="Sightlines Nearby map with a westward direction cone, a one-mile range, and Scan this direction button">
+            <div class="walkthrough-copy">
+              <h3 id="point-title">Choose a direction.</h3>
+              <p>Point your phone toward a place you&rsquo;re curious about. The cone on the map shows the area you&rsquo;re exploring.</p>
+              <ul><li><strong>Your heading:</strong> the compass direction at the top.</li><li><strong>Your range:</strong> how far ahead to look.</li><li><strong>Your scan:</strong> nearby addresses and roads to explore.</li></ul>
+              <p class="caption-note">In this example, the phone points west and the range is set to one mile.</p>
+            </div>
           </section>
-          <section>
-            <h3>Night Mode</h3>
-            <p>Use a low-light view to explore a direction and create a report. Successful scans are saved on your device to revisit later.</p>
+          <section class="walkthrough-panel" id="panel-review" aria-labelledby="review-title">
+            <img src="/assets/apps/sightlines-night-mode-20260926.webp" width="552" height="1200" loading="lazy" alt="Sightlines Night Mode showing a 249-degree westward heading and a list of nearby address candidates">
+            <div class="walkthrough-copy">
+              <h3 id="review-title">Review the possibilities.</h3>
+              <p>Nearby and Night Mode help you explore likely places in that direction. Night Mode provides a view that&rsquo;s easier to read in low light.</p>
+              <ul><li><strong>Address candidates:</strong> possible places along your sightline.</li><li><strong>Context:</strong> distances help you compare the results.</li><li><strong>History:</strong> successful reports are saved on your device.</li></ul>
+              <p class="caption-note">A candidate address is a possibility, not confirmation of the source of a light, sound, or event.</p>
+            </div>
           </section>
-          <section>
-            <h3>World Line</h3>
-            <p>Follow a line toward cities, countries, oceans, and landmarks. The bundled geographic dataset works offline without a subscription.</p>
+          <section class="walkthrough-panel" id="panel-explore" aria-labelledby="farther-title">
+            <img src="/assets/apps/sightlines-screen-2-20260926.webp" width="552" height="1200" loading="lazy" alt="Sightlines World Line following a westward path across the Pacific Ocean toward Australia">
+            <div class="walkthrough-copy">
+              <h3 id="farther-title">Follow your curiosity farther.</h3>
+              <p>World Line carries that direction across cities, countries, oceans, and landmarks. See what&rsquo;s on the other side of the horizon.</p>
+              <ul><li><strong>Look farther:</strong> expand the range beyond your neighborhood.</li><li><strong>Explore the line:</strong> discover geographic signposts along the way.</li><li><strong>Keep exploring:</strong> bundled World Line data works offline without Plus. Map tiles need a connection.</li></ul>
+              <p class="caption-note">Here, the westward line crosses the Pacific toward Australia.</p>
+            </div>
           </section>
         </div>
         <p class="app-note">Sightlines is for discovery. GPS, compass calibration, and map data affect accuracy. See <a href="/sightlines/support">Sightlines support</a> for scan allowances, Plus subscription details, and help getting started.</p>
+      </div>
+    </section>
+    <section class="product-bottom" aria-labelledby="try-title">
+      <div class="container">
+        <h2 id="try-title">See what&rsquo;s ahead.</h2>
+        <p>Download Sightlines for iPhone. Includes three successful cloud scans; Plus is optional. Saved history and offline World Line remain available without Plus.</p>
+        <a class="primary-link" href="https://apps.apple.com/us/app/sightlines-direction-finder/id6808024469" target="_blank" rel="noopener" data-track="sightlines_app_store">Get Sightlines on the App Store <span aria-hidden="true">&#8599;</span></a>
       </div>
     </section>
   </main>
