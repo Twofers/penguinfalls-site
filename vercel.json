@@ -4,7 +4,7 @@
   "redirects": [
     {
       "source": "/products",
-      "destination": "/#twofer",
+      "destination": "/#products",
       "permanent": false
     },
     {

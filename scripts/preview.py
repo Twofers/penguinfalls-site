@@ -12,7 +12,7 @@ class Handler(SimpleHTTPRequestHandler):
             return self.send_error(404)
         if path in ('/products', '/contact'):
             self.send_response(307)
-            self.send_header('Location', '/#twofer' if path == '/products' else '/#contact')
+            self.send_header('Location', '/#products' if path == '/products' else '/#contact')
             self.end_headers()
             return
         if path != '/' and not Path(path).suffix and (ROOT / (path.lstrip('/') + '.html')).is_file():

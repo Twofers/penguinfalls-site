@@ -1,29 +1,25 @@
-# Penguin Falls LLC Static Site
+# Penguin Falls LLC static website
 
-Plain HTML, CSS, and a small shared `site.js` for Vercel hosting. There is no framework, build step, package manager, or server code.
+A company website with a compact portfolio for Twofer and Sightlines, built with plain HTML, one shared stylesheet, and small scripts. There is no framework or build step.
 
-## Preview Locally
+## Preview and check
 
-The site uses clean URLs (`/privacy`, `/terms`), so preview with a server that resolves them:
+Run `python scripts/preview.py`, then open http://127.0.0.1:8768. The loopback server handles the same public clean URLs as Vercel.
 
-```powershell
-npx serve .
-```
+Run `python scripts/check-site.py`, `node scripts/check-analytics.cjs`, and `node --check` for the three JavaScript files. Inspect desktop and phone layouts in a browser before deploying a preview.
 
-Then open the URL it prints (usually `http://localhost:3000`). Plain `python -m http.server` also works, but only with the `.html` extensions typed in the address bar.
+## Design
 
-## Deploy
+All seven public pages use `styles.css`: shared type, colors, spacing, navigation, footer, links, and product presentation. Do not add page-specific override stylesheets. The homepage is the company overview; Twofer's detailed marketing stays on its own website. Sightlines retains its product walkthrough here.
 
-Use the Vercel flow from Section 12 of `../penguinfalls-build-plan.md`: put this folder in a GitHub repo, import it into Vercel as "Other" or "No framework", leave the build command empty, keep the output directory as the root, deploy, then point `penguinfalls.com` and `www.penguinfalls.com` to the Vercel project.
+App screenshots are authentic captures and must not be recolored or replaced with invented UI. Assets under `/assets` and `/brand` have immutable caching, so changed files need new versioned names.
 
-## October 2026 product presentation
+## Behavior
 
-refresh.css extends the existing design. walkthrough.js progressively enhances
-the Sightlines demo. analytics.js collects page views only on the canonical
-production hosts and respects DNT/GPC; local click hooks do not send custom
-events. No paid analytics plan has been enabled.
+`site.js` provides the accessible mobile menu and sticky-header state. `walkthrough.js` enhances the three Sightlines steps with keyboard-accessible tabs; all steps remain readable without JavaScript. `analytics.js` loads page views only on canonical production hosts, respects DNT/GPC, and redacts query strings and fragments. Local click hooks do not submit custom events or require a paid analytics plan.
 
-Preview: python scripts/preview.py at http://127.0.0.1:8768.
-Checks: python scripts/check-site.py and node scripts/check-analytics.cjs.
-See docs/website-improvements-20261002.md for candidate and release status.
-Verify a hosted preview before promotion.
+## Release
+
+Use the existing Vercel project and feature branch for preview deployments. Verify the hosted preview before requesting production promotion. Production publication requires Dan's explicit authorization. See `docs/website-improvements-20261002.md` and `docs/qa-20261002/release.json` for verification and release status.
+
+This repository is independent of the Twofer app. Its production/Sandbox app synchronization, native/OTA releases, database migrations, and backend functions are not affected by these website changes.
