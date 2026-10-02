@@ -1,33 +1,40 @@
 {
   "date": "2026-10-02",
-  "source": "3e38f1f9b711b1f66a367e4533511d21346316b5",
+  "scope": "Unified company website design for Penguin Falls",
+  "source": "7e6c69fa758f0f721519af4d8c267ef824dc5d68",
   "branch": "codex/product-first-homepage",
   "preview": {
-    "deployment": "dpl_ELgctFHmfVLxcm7SFmC3WwyHFAxj",
-    "url": "https://penguinfalls-site-j4zjxhwz7-dansanders-2432s-projects.vercel.app",
+    "deployment": "dpl_5VF3eBMM3QUcH4tpZHcsnjhD4xf9",
+    "url": "https://penguinfalls-site-byl1bfjie-dansanders-2432s-projects.vercel.app",
     "state": "READY",
-    "verification": "Passed authenticated browser inspection of all seven pages, phone layout and walkthrough"
+    "verification": "All seven hosted pages inspected through the normal authenticated browser session; shared CSS loaded, product walkthrough and mobile menu verified"
   },
   "production": {
     "deployment": "dpl_BHJTjZWyJg4z7h9qjyTRjLsCLY69",
     "source": "74a71c589f4ec66b4f5ddc45f6882bbe828306e5",
-    "state": "UNCHANGED; explicit production promotion approval pending"
+    "state": "UNCHANGED; verified via Vercel API after preview deployment"
   },
   "checks": {
     "publicPages": 7,
-    "localReferences": 145,
+    "localReferences": 160,
     "localWidths": [
       320,
       390,
       768,
-      1280
+      1024,
+      1280,
+      1440
     ],
-    "externalDestinationHttp200": 6,
+    "allPagesCheckedAtWidth": 320,
+    "externalDestinationHttp200": 3,
     "syntax": true,
     "diffWhitespace": true,
     "analyticsPrivacy": true,
     "walkthroughKeyboard": true,
-    "mobileMenuEscapeAndFocus": true
+    "mobileMenuEscapeAndFocus": true,
+    "hostedMobileMenuAnchor": true,
+    "policyAndSupportTextPreserved": true,
+    "browserErrors": 0
   },
   "analytics": {
     "plan": "Hobby",
@@ -42,5 +49,10 @@
     "backendMigrations": "None",
     "nativeOrOTA": "None"
   },
-  "releaseBlocker": "Automatic approval review rejected production promotion because it requires explicit production release authorization. No workaround attempted."
+  "proof": [
+    "penguin-falls-refined-desktop.jpg",
+    "penguin-falls-refined-full-page.jpg",
+    "penguin-falls-refined-mobile.jpg"
+  ],
+  "releaseBlocker": "Earlier automatic approval review rejected production promotion because explicit production release authorization was missing. This refinement was deployed only as a preview; no main-branch push or production action was attempted."
 }
