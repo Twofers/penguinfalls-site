@@ -60,3 +60,25 @@ and Sandbox, OTA/native builds, database schema, and backend functions are
 unchanged; app environment synchronization is not applicable.
 
 Hosted verification and final deployment IDs are recorded after release.
+
+## Verified preview and current publication status
+
+Candidate source: 3e38f1f9b711b1f66a367e4533511d21346316b5.
+Preview deployment: dpl_ELgctFHmfVLxcm7SFmC3WwyHFAxj.
+Preview URL: https://penguinfalls-site-j4zjxhwz7-dansanders-2432s-projects.vercel.app
+
+All seven preview pages were verified through the normal authenticated Vercel
+browser session, without disabling deployment protection. Phone layout and
+walkthrough interactions passed. The six external destinations (both Twofer
+stores, Sightlines App Store, Twofer home, merchant, and support) returned 200.
+All 145 local references resolved. See qa-20261002/release.json.
+
+Production remains on 74a71c5. Automatic approval review rejected promotion
+because it requires explicit production release authorization; a request for
+that specific action was presented to Dan. The implementation is saved on
+codex/product-first-homepage; main has not been changed. The free Vercel
+page-view capability is enabled, but its script is only in the candidate, so
+no new production tracking has been published.
+
+No app production/Sandbox, native/OTA, database, or Edge Function release is
+part of this change. A founder photo is not included; none was supplied.
