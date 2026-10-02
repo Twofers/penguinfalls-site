@@ -27,6 +27,15 @@ The independent Penguin Falls website is the only runtime scope. Twofer producti
 
 ## Publication status
 
-This refinement is authorized for implementation and preview. Production remains on source 74a71c589f4ec66b4f5ddc45f6882bbe828306e5 until explicitly approved. Automatic approval review rejected the earlier promotion because explicit production release authorization was missing. No production promotion or main-branch push is part of this design refinement.
+Dan explicitly authorized publication with "ok publish". The verified preview was promoted to production on October 2, 2026. Live URL: https://www.penguinfalls.com/.
 
-Hosted preview and source details are recorded in qa-20261002/release.json.
+Production deployment: dpl_H6LmzMTSBpZcYTA5V3EAq8cb2FcH.
+Verified runtime source: 7e6c69fa758f0f721519af4d8c267ef824dc5d68.
+Preview deployment: dpl_5VF3eBMM3QUcH4tpZHcsnjhD4xf9.
+Previous production deployment: dpl_BHJTjZWyJg4z7h9qjyTRjLsCLY69 (source 74a71c5).
+
+All seven public pages and four shared CSS/JavaScript files returned HTTP 200 and matched the verified local source exactly. The apex domain redirects to the canonical www domain. Desktop appearance, the 390-pixel mobile menu and product navigation, and the Sightlines keyboard walkthrough were checked on production. The included analytics script is now published and loads on the canonical domain; no custom-event reporting or paid upgrade was enabled.
+
+The publication authorization blocker is resolved. Automatic approval review separately rejected updating GitHub main because publication approval did not include a default-branch mutation. Main remains on 74a71c5; the released source and documentation remain on codex/product-first-homepage. Do not redeploy the old main revision over the published design. Explicit authorization is needed before aligning main.
+
+Publication details and proof are recorded in qa-20261002/release.json. This release-record commit changes documentation only; production remains the verified candidate.

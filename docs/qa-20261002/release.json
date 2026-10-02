@@ -10,9 +10,22 @@
     "verification": "All seven hosted pages inspected through the normal authenticated browser session; shared CSS loaded, product walkthrough and mobile menu verified"
   },
   "production": {
-    "deployment": "dpl_BHJTjZWyJg4z7h9qjyTRjLsCLY69",
-    "source": "74a71c589f4ec66b4f5ddc45f6882bbe828306e5",
-    "state": "UNCHANGED; verified via Vercel API after preview deployment"
+    "deployment": "dpl_H6LmzMTSBpZcYTA5V3EAq8cb2FcH",
+    "source": "7e6c69fa758f0f721519af4d8c267ef824dc5d68",
+    "url": "https://www.penguinfalls.com/",
+    "state": "READY; published and verified",
+    "authorization": "Dan explicitly requested: ok publish",
+    "verifiedAt": "2026-10-02T15:13:58.253927+00:00",
+    "verification": {
+      "publicPagesHttp200": 7,
+      "runtimeFilesMatchingVerifiedSource": 11,
+      "apexRedirectsToCanonical": true,
+      "desktopVisual": true,
+      "mobileWidth": 390,
+      "mobileMenuAndProductNavigation": true,
+      "sightlinesKeyboardWalkthrough": true,
+      "analyticsScriptLoaded": true
+    }
   },
   "checks": {
     "publicPages": 7,
@@ -39,7 +52,7 @@
   "analytics": {
     "plan": "Hobby",
     "projectPageViewsEnabled": true,
-    "productionScriptPublished": false,
+    "productionScriptPublished": true,
     "customEventReporting": false,
     "upgrade": false
   },
@@ -52,7 +65,18 @@
   "proof": [
     "penguin-falls-refined-desktop.jpg",
     "penguin-falls-refined-full-page.jpg",
-    "penguin-falls-refined-mobile.jpg"
+    "penguin-falls-refined-mobile.jpg",
+    "penguin-falls-published-desktop.jpg"
   ],
-  "releaseBlocker": "Earlier automatic approval review rejected production promotion because explicit production release authorization was missing. This refinement was deployed only as a preview; no main-branch push or production action was attempted."
+  "releaseBlocker": null,
+  "previousProduction": {
+    "deployment": "dpl_BHJTjZWyJg4z7h9qjyTRjLsCLY69",
+    "source": "74a71c589f4ec66b4f5ddc45f6882bbe828306e5",
+    "state": "Replaced after Dan authorized publication"
+  },
+  "repository": {
+    "releasedSourceBranch": "codex/product-first-homepage",
+    "mainSource": "74a71c589f4ec66b4f5ddc45f6882bbe828306e5",
+    "mainUpdate": "Automatic approval review rejected updating main because publication authorization did not include a separate default-branch mutation. Main remains unchanged; explicit approval needed to align it."
+  }
 }
