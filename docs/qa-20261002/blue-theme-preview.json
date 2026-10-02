@@ -1,0 +1,53 @@
+{
+  "scope": "Restore the earlier blue theme within the refined company layout",
+  "requestedPreference": "Dan prefers the more blue theme of the earlier website.",
+  "verifiedAt": "2026-10-02T15:23:59.597904+00:00",
+  "source": "8316681612a111e2d2f5e9a86109f688a9339ca1",
+  "preview": {
+    "deployment": "dpl_3nyJNkXVRuKAbFiJTcJo6Y1U4uCk",
+    "url": "https://penguinfalls-site-a5dk6cfza-dansanders-2432s-projects.vercel.app",
+    "state": "READY; verified on desktop and phone"
+  },
+  "production": {
+    "deployment": "dpl_H6LmzMTSBpZcYTA5V3EAq8cb2FcH",
+    "source": "7e6c69fa758f0f721519af4d8c267ef824dc5d68",
+    "state": "UNCHANGED; blue theme is a review preview"
+  },
+  "palette": {
+    "navy": "#14385f",
+    "deepNavy": "#0b2949",
+    "sky": "#9acbfc",
+    "text": "#f4f9ff",
+    "mutedText": "#c0d5e9"
+  },
+  "checks": {
+    "publicPages": 7,
+    "localReferences": 160,
+    "widthsReviewed": [
+      320,
+      390,
+      1280
+    ],
+    "overflowObserved": false,
+    "bodyCopyPreservedAllPages": true,
+    "imagesUnchanged": true,
+    "sharedThemeVerifiedOnAllHostedPages": true,
+    "mobileMenuEscapeAndFocus": true,
+    "browserErrors": 0,
+    "whitespace": true
+  },
+  "contrastRatios": {
+    "body": 11.27,
+    "mutedBody": 7.92,
+    "productCaption": 5.08,
+    "primaryButton": 8.63,
+    "navigation": 13.9
+  },
+  "proof": [
+    "penguin-falls-blue-preview-desktop.jpg",
+    "penguin-falls-blue-preview-full-page.jpg",
+    "penguin-falls-blue-preview-mobile.jpg"
+  ],
+  "twoferAppProductionAndSandbox": "No app, backend, database, OTA, or native changes; synchronization not applicable.",
+  "mainBranch": "Not changed; the earlier main-branch approval request has not been answered."
+}

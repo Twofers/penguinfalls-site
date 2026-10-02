@@ -39,3 +39,14 @@ All seven public pages and four shared CSS/JavaScript files returned HTTP 200 an
 The publication authorization blocker is resolved. Automatic approval review separately rejected updating GitHub main because publication approval did not include a default-branch mutation. Main remains on 74a71c5; the released source and documentation remain on codex/product-first-homepage. Do not redeploy the old main revision over the published design. Explicit authorization is needed before aligning main.
 
 Publication details and proof are recorded in qa-20261002/release.json. This release-record commit changes documentation only; production remains the verified candidate.
+
+## Blue-theme preview requested after publication
+
+Dan prefers the earlier blue theme. Candidate 8316681612a111e2d2f5e9a86109f688a9339ca1 restores the original navy (#14385f), deep navy (#0b2949), and sky blue (#9acbfc), with white text, blue product panels, and the existing reverse logo. The refined layout, typography, page copy, and actual app screenshot pixels are preserved.
+
+Preview: https://penguinfalls-site-a5dk6cfza-dansanders-2432s-projects.vercel.app
+Deployment: dpl_3nyJNkXVRuKAbFiJTcJo6Y1U4uCk.
+
+All seven hosted pages use the blue theme. Desktop, phone, narrow-screen layouts, mobile menu focus, local references, and text contrast were checked. Tested normal-text color combinations range from 5.08:1 to 13.90:1. See qa-20261002/blue-theme-preview.json and the accompanying screenshots.
+
+The blue theme is a review preview. Production remains the published 7e6c69f design, and main was not changed.
